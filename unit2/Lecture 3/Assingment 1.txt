@@ -1,0 +1,157 @@
+Ex 1 :
+
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	printf(" C programming");
+};
+
+################################################################################
+
+Ex 2 :
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	int x ;
+	printf(" enter integer : ");
+	fflush(stdin); fflush(stdout);
+	scanf("%d",&x);
+	printf (" you entered : %d",x);
+};
+
+###################################################################################
+
+Ex 3 :
+* main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	int num1 , num2 , sum ;
+	printf("enter two integers :");
+	fflush(stdin);fflush(stdout);
+	scanf ("%d %d",&num1 , &num2);
+	sum = num1 + num2 ;
+	printf ("sum = %d",sum);
+};
+
+####################################################################################
+
+Ex 4 :
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	float num1 , num2 , product ;
+	printf("enter two float numbers :");
+	fflush(stdin);fflush(stdout);
+	scanf ("%f %f",&num1 , &num2);
+	product = num1 * num2 ;
+	printf ("product = %f",product);
+};
+
+######################################################################################
+
+Ex 5 :
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	char x ;
+	printf (" enter character :");
+	fflush(stdin); fflush(stdout);
+	scanf("%c",&x);
+	printf("ASCII value of %c = %d",x,x);
+};
+
+#######################################################################################
+
+Ex 6 :
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	float a , b ,temp=0 ;
+	printf ("enter value of a :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&a);
+	printf ("enter value of b :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&b);
+	temp=a;
+	a=b;
+	b=temp;
+	printf ("value after swaping ,value of a :%f\n",a);
+	printf ("value after swaping ,value of b :%f",b);
+};
+
+##############################################################################################
+
+Ex 7 :
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+void main()
+{
+	float a , b ,temp=0 ;
+	printf ("enter value of a :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&a);
+	printf ("enter value of b :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&b);
+	a = a * b ;
+	b = a / b ;
+	a = a / b ;
+	printf ("value after swaping ,value of a :%f\n",a);
+	printf ("value after swaping ,value of b :%f",b);
+};
+
+###############################################################################################
