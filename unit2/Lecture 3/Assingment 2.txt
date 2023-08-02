@@ -1,0 +1,54 @@
+EX 1 :
+* main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+int main()
+{
+	int num ;
+	printf ("enter integer number : ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&num);
+	if ((num %2) ==0)
+	{
+		printf("%d is even",num);
+
+	}
+	else
+		printf("%d is odd",num);
+	return 0;
+};
+
+#########################################################################################################
+
+Ex 2 :
+/*
+
+ * main.c
+ *
+ *  Created on: Jul 23, 2023
+ *      Author: Abdelrahman Osama
+ */
+#include"stdio.h"
+
+int main()
+{
+	char x;
+	printf("enter an alphabet character :");
+	fflush(stdin);fflush(stdout);
+	scanf("%c",&x);
+	if(x=='a' || x=='A'|| x=='i' || x=='I'|| x=='u' || x=='U' || x=='o' || x=='O' ||x=='e' ||x=='E')
+	{
+		printf("%c is a vowel",x);
+	}
+	else
+
+		printf("%c is a consonant",x);
+};
+
+###############################################################################################################################
+
+Ex 3 :
