@@ -1,4 +1,5 @@
 EX 1 :
+
 * main.c
  *
  *  Created on: Jul 23, 2023
@@ -25,6 +26,7 @@ int main()
 #########################################################################################################
 
 Ex 2 :
+
 /*
 
  * main.c
@@ -52,3 +54,215 @@ int main()
 ###############################################################################################################################
 
 Ex 3 :
+
+#include "stdio.h"
+void main (int)
+{
+	float n1,n2,n3;
+	printf("enter three numbers :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f %f %f",&n1,&n2,&n3);
+
+	if(n1>=n2)
+	{
+		if(n1>=n3)
+			printf("the largest number = %f",n1);
+		else
+			printf("the largest number = %f",n3);
+
+	}
+	else{
+		if (n2>=n1)
+		{
+			if(n2>=n3)
+				printf("the largest number = %f",n2);
+			else
+				printf("the largest number = %f",n3);
+		}
+	}
+}
+#########################################################################################################################
+
+Ex 4 :
+
+#include "stdio.h"
+void main ()
+{
+	float UserNum,RefNum=50.0,comparison_value;
+	printf("enter a number :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&UserNum);
+	comparison_value=RefNum + UserNum;
+	if(comparison_value>RefNum)
+	{
+		printf("%f is positive",UserNum);
+	}
+	else if (comparison_value<RefNum)
+	{
+		printf("%f is negative",UserNum);
+	}
+	else
+		printf("%f is zero",UserNum);
+}
+
+#######################################################################################################################
+
+Ex 5 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	char c ;
+	printf("enter character :");
+	fflush(stdin);fflush(stdout);
+	scanf("%c",&c);
+	if((c>='a' && c<='z') || (c>='A' && c<='Z'))
+	{
+		printf("%c is alphabet",c);
+	}
+	else
+		printf("%c is not alphabet",c);
+}
+#######################################################################################################################
+
+Ex 6 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	int sum,n ;
+	printf("enter natural number :");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&n);
+
+	for(int i=1;i<n+1;i++)
+	{
+		sum+=i;
+	}
+	printf("sum = %d",sum);
+}
+#########################################################################################################################
+
+Ex 7 :
+
+void main ()
+{
+	int factorial=1,n ;
+	printf("enter an integer :");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&n);
+	if (n<0)
+	{
+		printf("error! Factorial of negative number does not exist");
+	}
+	else if (n == 0)
+	{
+		printf("Factorial = 1");
+	}
+	else
+	{
+		for (int i=1;i<n+1;++i)
+		{
+			factorial*= i;
+		}
+		printf("Factorial = %d",factorial);
+	}
+}
+
+##########################################################################################################################
+
+Ex 8 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	char operation;
+	float operand1,operand2;
+	printf("enter operator (+,-,*,/) :");
+	fflush(stdin);fflush(stdout);
+	scanf("%c",&operation);
+	printf("enter two operands :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f %f",&operand1,&operand2);
+	if (operation == '+')
+	{
+		float sum = operand1 + operand2;
+		printf("%f + %f = %f",operand1,operand2,sum);
+	}
+	else if (operation == '-')
+	{
+		float sub = operand1 - operand2;
+		printf("%f - %f = %f",operand1,operand2,sub);
+	}
+	else if (operation == '*')
+	{
+		float mul = operand1 * operand2;
+		printf("%f * %f = %f",operand1,operand2,mul);
+	}
+	else if (operation == '/')
+	{
+		float div = operand1 / operand2;
+		printf("%f / %f = %f",operand1,operand2,div);
+	}
+        else
+		printf ("Error !! operation is not correct");
+
+}
+
+############################################################################################################################
+Ex 7 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	char operation;
+	float operand1,operand2;
+	printf("enter operator (+,-,*,/) :");
+	fflush(stdin);fflush(stdout);
+	scanf("%c",&operation);
+	printf("enter two operands :");
+	fflush(stdin);fflush(stdout);
+	scanf("%f %f",&operand1,&operand2);
+	switch(operation)
+	{
+	case '+':
+
+		float sum = operand1 + operand2;
+		printf("%f + %f = %f",operand1,operand2,sum);
+		break;
+
+	case '-':
+
+		float sub = operand1 - operand2;
+		printf("%f - %f = %f",operand1,operand2,sub);
+		break;
+
+	case '*':
+
+		float mul = operand1 * operand2;
+		printf("%f * %f = %f",operand1,operand2,mul);
+		break;
+
+	case '/':
+
+		float div = operand1 / operand2;
+		printf("%f / %f = %f",operand1,operand2,div);
+		break;
+
+	default:
+		printf ("Error !! operation is not correct");
+		break;
+	}
+}
