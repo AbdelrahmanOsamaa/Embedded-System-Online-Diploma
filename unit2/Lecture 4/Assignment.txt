@@ -1,0 +1,208 @@
+Ex 1 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	float matrix1[2][2],matrix2[2][2],sum[2][2];
+	int r,c ;
+	printf("enter elements of first matrix :-\n");
+	for (r=0;r<2;r++)
+	{
+		for(c=0;c<2;c++)
+		{
+			printf("enter element [%d][%d]: ",r+1,c+1);
+			fflush(stdout);fflush(stdin);
+			scanf("%f",&matrix1[r][c]);
+		}
+
+	}
+	printf("enter elements of second matrix :-\n");
+	for (r=0;r<2;r++)
+	{
+		for(c=0;c<2;c++)
+		{
+			printf("enter element [%d][%d]: ",r+1,c+1);
+			fflush(stdout);fflush(stdin);
+			scanf("%f",&matrix2[r][c]);
+		}
+
+	}
+	for(int i=0;i<2;i++)
+	{
+		for(int j=0;j<2;j++)
+		{
+			sum[i][j]=matrix1[i][j]+matrix2[i][j];
+		}
+	}
+	printf("sum of matrix\n");
+	for(r=0;r<2;r++)
+	{
+		for(c=0;c<2;c++)
+		{
+			printf("%f\t",sum[r][c]);
+			if(c==1)
+				printf("\n");
+		}
+	}
+}
+
+####################################################################################################
+
+Ex 2 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	float data[100],average,sum;
+	int n,i;
+	printf("enter number of data elements (not more than 100) : ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("enter number : ");
+		fflush(stdin);fflush(stdout);
+		scanf("%f",&data[i]);
+		sum+=data[i];
+	}
+	printf("average = %.2f ",sum/n);
+}
+
+##########################################################################################################
+
+Ex 3 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	int r , c , i , j;
+	printf("enter matrix rows and columns: ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d %d",&r,&c);
+	float user_matrix[20][20],transpose_matrix[20][20];
+	printf("enter elements of matrix :-\n");
+	for (i=0;i<r;i++)
+	{
+		for (j=0;j<c;j++)
+		{
+			printf("enter element[%d][%d]: " ,i+1,j+1);
+			fflush(stdin);fflush(stdout);
+			scanf("%f",&user_matrix[i][j]);
+		}
+	}
+	printf("the entered matrix :-\n");
+	for (i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+			printf("%.2f\t",user_matrix[i][j]);
+			if(j==c-1)
+				printf("\n");
+		}
+	}
+	for (i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+			transpose_matrix[j][i]= user_matrix[i][j];
+		}
+	}
+	printf("the transposed matrix :-\n");
+	for (i=0;i<c;i++)
+	{
+		for(j=0;j<r;j++)
+		{
+			printf("%.2f\t",transpose_matrix[i][j]);
+			if(j==r-1)
+				printf("\n");
+		}
+	}
+}
+
+################################################################################################################################
+
+Ex 4 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	float matrix [20],inserted_num;
+	int n ,i,location;
+	printf("enter number of elements :");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&n);
+	for (i=0;i<n;i++)
+	{
+		printf("enter element[%d]: ",i+1);
+		fflush(stdin);fflush(stdout);
+		scanf("%f",&matrix[i]);
+	}
+	printf("enter the element to be inserted : ");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&inserted_num);
+	printf("the location (starts from 1 : %d ): ",n);
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&location);
+	if (location > 0 && location < n)
+	{
+		matrix[location-1]=inserted_num;
+		for (i=0;i<n;i++)
+		{
+			printf("%.2f\t",matrix[i]);
+		}
+	}
+	else
+		printf("invalid location !");
+
+}
+
+##################################################################################################################################
+
+Ex 5 :
+
+#include "stdio.h"
+
+
+
+void main ()
+{
+	float array [20],value_search;
+	int n ,i,location;
+	printf("enter number of elements :");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&n);
+	for (i=0;i<n;i++)
+	{
+		printf("enter element[%d]: ",i+1);
+		fflush(stdin);fflush(stdout);
+		scanf("%f",&array[i]);
+	}
+	printf("enter the value you are searching for : ");
+	fflush(stdin);fflush(stdout);
+	scanf("%f",&value_search);
+	i=0;
+	while(i < n && value_search!=array[i])
+	{
+		i++;
+	}
+	if (i<n)
+	{
+		printf("number found at location : %d",i+1);
+	}
+	else
+		printf("number is not found !");
+}
+
+############################################################################################################################
