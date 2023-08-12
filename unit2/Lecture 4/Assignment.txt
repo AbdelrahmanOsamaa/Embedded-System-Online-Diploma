@@ -206,3 +206,90 @@ void main ()
 }
 
 ############################################################################################################################
+
+Strings Part :-
+
+Ex 1 :
+
+#include "stdio.h"
+#include "string.h"
+
+
+
+void main ()
+{
+	char array[50],freq;
+	int i, count=0;
+	printf("enter a string :");
+	fflush(stdin);fflush(stdout);
+	gets(array);
+	printf("enter character to see it's frequency :");
+	fflush(stdin);fflush(stdout);
+	scanf("%c",&freq);
+	for (i=0;i<strlen(array);i++)
+	{
+		if (freq == array[i])
+		{
+			count +=1;
+		}
+	}
+	if (count == 0)
+	{
+		printf("This character is not found in the string !");
+	}
+	else
+		printf("frequency of %c is : %d",freq,count);
+}
+
+############################################################################################################################
+
+Ex 2 :
+
+#include "stdio.h"
+#include "string.h"
+
+
+
+void main ()
+{
+	char array[50];
+	int i=0,count=0;
+	printf("enter a string to know it's length :");
+	fflush(stdin);fflush(stdout);
+	gets(array);
+	while(array[i]!=0)
+	{
+		count+=1;
+		i++;
+	}
+	printf("string length : %d",count);
+}
+
+###########################################################################################################################
+
+Ex 3 :
+
+#include "stdio.h"
+#include "string.h"
+
+
+
+void main ()
+{
+	char array[50],temp;
+	int i ,n;
+	printf("enter a string :");
+	fflush(stdin);fflush(stdout);
+	gets(array);
+	n=strlen(array)-1;
+	while(i<n)
+	{
+		temp = array[i];
+		array[i] = array[n];
+		array[n] = temp;
+		i++;
+		n--;
+	}
+	printf("reverse string is :%s",array);
+}
+###########################################################################################################################
