@@ -1,0 +1,119 @@
+Ex 1 :
+
+#include "stdio.h"
+
+
+
+
+int prime_num_check();
+
+int main ()
+{
+	int num1,num2,i;
+	printf("enter two numbers (intervals): ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d%d",&num1,&num2);
+	printf("prime numbers between %d and %d are : ",num1,num2);
+	for (i=num1+1;i<num2;++i)
+	{
+		if(prime_num_check(i)==1)
+			printf("%d ",i);
+	}
+
+}
+
+int prime_num_check(int x)
+{
+	int i ;
+	for (i=2;i<=x/2;i++)
+	{
+		if(x%i==0)
+			return 0;
+		break;
+	}
+	return 1;
+}
+
+################################################################################################################################
+
+Ex 2 :
+#include "stdio.h"
+
+
+int factorial(int n);
+
+int main ()
+{
+	int x;
+	printf("enter an positive integer : ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&x);
+	printf("factorial of %d is : %d",x,factorial(x));
+	return 0;
+}
+
+int factorial (int n)
+{
+	if (n!=1)
+		return n*factorial(n-1);
+}
+
+##################################################################################################################################
+
+Ex 3 :
+
+#include "stdio.h"
+
+void sentence_reverse();
+
+void main()
+{
+	printf("enter a sentence : ");
+	fflush(stdin);fflush(stdout);
+	sentence_reverse();
+
+}
+
+void sentence_reverse()
+{
+	char x;
+	scanf("%c",&x);
+	if (x != '\n')
+	{
+		sentence_reverse();
+		printf("%c",x);
+	}
+}
+
+################################################################################################################
+
+Ex 4 :
+
+#include "stdio.h"
+
+
+
+int power (int base,int exp)
+{
+	if (exp !=0)
+	{
+		return base*power(base,exp -1);
+	}
+	else
+		return 1;
+}
+
+int main()
+{
+	int base , exp;
+	printf("enter base number : ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&base);
+	printf("enter power number (positive integer) :  ");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&exp);
+	printf("%d^%d = %d",base,exp,power(base,exp));
+	return 0 ;
+}
+
+##############################################################################################################
