@@ -1,0 +1,179 @@
+Lab 1 : Employee Sort with Structures ,Sort with Ages
+
+#include "stdio.h"
+#include "string.h"
+#include "conio.h"
+
+struct semplyee
+{
+	char m_name[50];
+	int m_BirthDaydateDay;
+	int m_BirthDaydateMonth;
+	int m_BirthDaydateYear;
+	int m_Salary;
+};
+
+int main()
+{
+	struct semplyee workers[100],temp_workers;
+	int count=0, i, j;
+
+	do
+	{
+		printf("enter your name : ");
+		fflush(stdin);fflush(stdout);
+		gets(workers[count].m_name);
+		printf("enter your age (day/month/year) :");
+		fflush(stdin);fflush(stdout);
+		scanf("%d/%d/%d",&workers[count].m_BirthDaydateDay,
+				&workers[count].m_BirthDaydateMonth,&workers[count].m_BirthDaydateYear);
+		printf("enter your salary :");
+		fflush(stdin);fflush(stdout);
+		scanf("%d",&workers[count].m_Salary);
+		count++;
+		if(count == 100)
+			break;
+		printf("if u want to add more worker enter 'y' : ");
+	}
+	while(getch()=='y');
+
+	for (i=0;i<count-1;i++)
+	{
+		for (j=i+1;j<count;j++)
+		{
+			if
+			(
+					(workers[i].m_BirthDaydateYear>workers[j].m_BirthDaydateYear ||
+						(workers[i].m_BirthDaydateYear == workers[j].m_BirthDaydateYear &&
+							workers[i].m_BirthDaydateMonth > workers[j].m_BirthDaydateMonth) ||
+								(workers[i].m_BirthDaydateYear == workers[j].m_BirthDaydateYear &&
+									workers[i].m_BirthDaydateMonth == workers[j].m_BirthDaydateMonth) ||
+									   workers[i].m_BirthDaydateDay > workers[j].m_BirthDaydateDay )
+			)
+			{
+				temp_workers = workers[i];
+				workers[i] = workers[j];
+				workers[j] = temp_workers;
+			}
+		}
+	}
+	for(i=0;i<count;i++)
+	{
+		printf("%s\t %d/%d/%d\t %d",workers[i].m_name,workers[i].
+				m_BirthDaydateDay,workers[i].m_BirthDaydateMonth,workers[i].m_BirthDaydateYear,
+				workers[i].m_Salary);
+	}
+
+}
+
+##########################################################################################################################
+Lab 2 : Using Structures with Functions Read and Print Employee and Date Values using Functions
+
+
+#include "stdio.h"
+#include "string.h"
+#include "conio.h"
+
+struct sdate
+{
+	int m_day;
+	int m_month;
+	int m_year;
+};
+
+struct semployee
+{
+	char m_name[50];
+	struct sdate m_BirthDate;
+	struct sdate m_GradutionDate;
+	int m_Salary;
+};
+
+struct sdate ReadDate(char DateName[])
+{
+	struct sdate date;
+	printf("enter %s (day/month/year) :\n",DateName);
+	fflush(stdin);fflush(stdout);
+	scanf("%d/%d/%d",&date.m_day,&date.m_month,&date.m_year);
+	return date ;
+}
+struct semployee ReadEmployee()
+{
+	struct semployee employee;
+	char first_name[50],second_name[50];
+	printf("enter your first name :");
+	fflush(stdin);fflush(stdout);
+	scanf("%s",first_name);
+	printf("enter your second name :");
+	fflush(stdin);fflush(stdout);
+	scanf("%s",second_name);
+	strcpy(employee.m_name,first_name);
+	strcat(employee.m_name," ");
+	strcat(employee.m_name,second_name);
+	fflush(stdin);fflush(stdout);
+	employee.m_BirthDate=ReadDate("Employee Birth Date");
+
+	employee.m_GradutionDate=ReadDate("Employee Graduation Date");
+
+	printf("enter your salary :");
+	fflush(stdin);fflush(stdout);
+	scanf("%d",&employee.m_Salary);
+	return employee;
+}
+void PrintEmployee(struct semployee employee)
+{
+	printf("%s\t%d/%d/%d \t%d/%d/%d\t%d",employee.m_name
+		,employee.m_BirthDate.m_day,employee.m_BirthDate.m_month,employee.m_BirthDate.m_year
+		,employee.m_GradutionDate.m_day,employee.m_GradutionDate.m_month,employee.m_GradutionDate.m_year
+			,employee.m_Salary);
+
+}
+
+int main()
+{
+	struct semployee x=ReadEmployee();
+	PrintEmployee(x);
+}
+
+####################################################################################################################################
+Lab 3 : program Adding Two Complex Numbers using Structure And Function
+
+#include "stdio.h"
+#include "string.h"
+#include "conio.h"
+
+struct sComplex
+{
+	double m_R;
+	double m_I;
+};
+struct sComplex ReadComplex(char name[])
+{
+	struct sComplex number;
+	printf("enter %s complex value (3,2) :",name);
+	fflush(stdin);fflush(stdout);
+	scanf("%lf,%lf",&number.m_R,&number.m_I);
+	return number;
+}
+struct sComplex AddComplex(struct sComplex a,struct sComplex b)
+{
+	struct sComplex x;
+	x.m_R = a.m_R + b.m_R;
+	x.m_I = a.m_I + b.m_I;
+	return x;
+}
+
+void PrintComplex(char name[],struct sComplex x)
+{
+	printf("%s= %lf + j%lf",name,x.m_R,x.m_I);
+}
+
+int main()
+{
+	struct sComplex a,b,result;
+	a=ReadComplex("a");
+	b=ReadComplex("b");
+	result=AddComplex(a,b);
+	PrintComplex("result",result);
+}
+##############################################################################################
