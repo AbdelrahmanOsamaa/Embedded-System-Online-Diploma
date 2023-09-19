@@ -1,0 +1,22 @@
+#include "stdio.h"
+
+
+void SumAllDigits(int x)
+{
+	int remainder ,sum=0;
+	while(x!=0)
+	{
+		remainder=x%10;
+		x=x/10;
+		sum+=remainder;
+	}
+	printf("sum of digits =%d",sum);
+}
+
+
+
+int main()
+{
+	int x=4565;
+	SumAllDigits(x);
+}

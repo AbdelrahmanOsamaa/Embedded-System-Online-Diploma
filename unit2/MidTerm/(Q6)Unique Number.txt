@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+
+int Uniqe_num(int arr[], int size) {
+	int ans = 0;
+	for (int i=0; i < size; i++) {
+		ans ^= arr[i];
+	}
+	printf("the unique number is =%d\n",ans);
+}
+
+
+
+int main() {
+
+	/* divided size of arr by 4 because it's type is an integer ,but it can be changed depending 
+	 * on type of the array element  */
+
+
+	int arr1[]={4, 2, 5, 2, 5, 7, 4};
+	int size1 = sizeof(arr1)/4;
+	Uniqe_num(arr1,size1);
+
+	int arr2[] = {4, 2, 4};
+	int size2 = sizeof(arr2)/4;
+	Uniqe_num(arr2, size2);
+
+}

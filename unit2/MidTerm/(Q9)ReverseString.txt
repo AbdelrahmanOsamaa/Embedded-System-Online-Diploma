@@ -1,0 +1,31 @@
+#include "stdio.h"
+#include "string.h"
+void Reverse_string(char *arr,int size)
+{
+	int i=0 ,j=0,k=0;
+	char str1[50],str2[50];
+	while(arr[i]!=' ')
+	{
+		str1[j]=arr[i];
+		++j;
+		++i;
+	}
+	if (arr[i]==' ')
+	{
+		for(k=0;k<size;k++)
+		{
+			str2[k]=arr[i+1];
+			++i;
+		}
+	}
+	strcat(str2," ");
+	strcat(str2,str1);
+	printf("%s",str2);
+}
+int main()
+{
+	char arr[]="abdelrahman osama";
+	int size=sizeof(arr);
+	Reverse_string(arr,size);
+}
+

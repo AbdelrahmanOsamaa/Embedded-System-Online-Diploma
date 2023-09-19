@@ -1,0 +1,41 @@
+#include <stdio.h>
+/* square root is based on integral part and fractional part
+ * and it lies between 0 and the number
+ * ex : sqr(4) is between 0 : 4 >> which is 2.000
+ */
+float SQRT(int number)
+{
+	int start = 0, end = number, mid;
+	float ans;
+	// integral part
+	while (start <= end) {
+		mid = (start + end) / 2;
+		if (mid * mid == number) {
+			ans = mid;
+			break;
+		}
+		if (mid * mid < number) {
+			ans=start;
+			start = mid + 1;
+		}
+
+		else {
+			end = mid - 1;
+		}
+	}
+	//Fractional part up to 3 digits
+	float increment = 0.1;
+	for (int i = 0; i < 3; i++) {
+		while (ans * ans <= number) {
+			ans += increment;
+		}
+		ans = ans - increment;
+		increment = increment / 10;
+	}
+	printf("%.3f",ans);
+}
+int main()
+{
+	int N = 10;
+	SQRT(N);
+}

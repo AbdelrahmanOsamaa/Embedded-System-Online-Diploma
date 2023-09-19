@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+
+void Sum_num(int x)
+{
+	int sum=0;
+	sum=x*(x+1)/2;
+	printf("sum from (1 : %d) =%d",x,sum);
+}
+
+
+int main()
+{
+	int x=100;
+	Sum_num(x);
+}
+

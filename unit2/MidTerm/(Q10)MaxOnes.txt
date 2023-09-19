@@ -1,0 +1,21 @@
+#include "stdio.h"
+
+
+int MaxNumOne(int x)
+{
+	int count=0;
+	while(x!=0)
+	{
+		x=(x&(x<<1));
+		++count;
+	}
+	printf("Max ones :%d\n",count);
+}
+
+int main()
+{
+	MaxNumOne(14);
+	MaxNumOne(110);
+
+}
+

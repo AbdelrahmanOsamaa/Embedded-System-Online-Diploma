@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void Reverse(int x)
+{
+	int rev;
+	while(x!=0)
+	{
+		rev=x%10;
+		x=x/10;
+		printf("%d",rev);
+	}
+	printf("\n");
+
+}
+
+
+int main ()
+{
+	int x =2457;
+	Reverse(x);
+	int y = 1057;
+	Reverse(y);
+}
+

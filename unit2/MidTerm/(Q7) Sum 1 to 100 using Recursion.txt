@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+int Sum_num(unsigned int n)
+{
+	static int sum=0;
+	if(n>0)
+	{
+		sum+=n;
+		Sum_num(n-1);
+	}
+	return sum;
+}
+
+
+int main()
+{
+	int x=100 , sum;
+	sum=Sum_num(x);
+	printf("sum of number from (1 : 100) = %d",sum);
+
+}
