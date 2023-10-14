@@ -1,7 +1,7 @@
 #@Copyright : Abdelrahman
 
 CC=arm-none-eabi-
-CFLAGS=-g -mcpu=cortex-m3
+CFLAGS=-gdwarf-2 -mcpu=cortex-m3 -mthumb
 INCS=-I .
 LIBS=
 SRC= $(wildcard *.c)
@@ -16,11 +16,10 @@ all: $(Project_name).bin
 %.o: %.c
 	$(CC)gcc.exe -c  $(INCS) $(CFLAGS) $< -o $@
 
-startup.o: startup.s
-	$(CC)as.exe $(CFLAGS) $< -o $@
+
 
 $(Project_name).elf: $(OBJ) $(AsOBJ)
-	$(CC)ld -T linker_script.ld $(LIBS) $(OBJ) $(AsOBJ) -o $@
+	$(CC)ld -T linker_script.ld $(LIBS) $(OBJ) $(AsOBJ) -o $@ -Map=Map_file.map
 
 $(Project_name).bin: $(Project_name).elf
 	

@@ -1,7 +1,7 @@
 /* Learn-in-depth : Abdelrahman osama*/
 
 
-section .vector
+.section .vector
 .word _reset
 .word Vector_handler			/* NMI*/
 .word Vector_handler			/* Hard Fault*/
@@ -22,8 +22,8 @@ section .vector
 .word Vector_handler			/* IRQ2*/
 				
 				/* on to IRQ67 */
-section .text
-reset:
+.section .text
+_reset:
 	bl main
 	b .
 .thumb_func
