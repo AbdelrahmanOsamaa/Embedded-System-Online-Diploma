@@ -21,17 +21,20 @@ extern uint32_t _S_DATA ;
 extern uint32_t _E_DATA ;
 extern uint32_t _S_bss ;
 extern uint32_t _E_bss ;
-extern uint32_t _stack_top;
+/* to create stack in this startup.c without using it as a simpol in linker script
+assume it has size of 1024 byte as an array and it's uninitialized so it will appear on .bss section */
+static unsigned long Stack_top[256]; // static to limit the scope of this variable to this file only 
 
-uint32_t vectors[] __attribute__((section(".vectors"))) = {
-	(uint32_t) &_stack_top ,
-	(uint32_t) &Rest_Handler,
-	(uint32_t) &NMI_Handler,
-	(uint32_t) &H_Fault_Handler,
-	(uint32_t) &MM_Fault_Handler,
-	(uint32_t) &Bus_Fault,
-	(uint32_t) &Usage_Fault_Handler,
-	
+
+void (* p_fn_vectors[])()__attribute__((section(".vectors")))=
+{
+	(void(*)()) ((unsigned long)Stack_top + sizeof(Stack_top)), // casting to avoid the warning even though it has same size
+	 &Rest_Handler, // no need to cast beacuse it's already has the same type (function take nothing and return void ) 
+	 &NMI_Handler, // no need to cast beacuse it's already has the same type (function take nothing and return void )
+	 &H_Fault_Handler, // no need to cast beacuse it's already has the same type (function take nothing and return void )
+	 &MM_Fault_Handler, // no need to cast beacuse it's already has the same type (function take nothing and return void )
+	 &Bus_Fault, // no need to cast beacuse it's already has the same type (function take nothing and return void )
+	 &Usage_Fault_Handler // no need to cast beacuse it's already has the same type (function take nothing and return void )
 };
 
 void Rest_Handler(void)
@@ -54,7 +57,6 @@ void Rest_Handler(void)
 	{
 		 *((unsigned char *)p_dst ++) = (unsigned char) 0 ;
 	}
-	
 	//Jump to main
 	main();
 }
