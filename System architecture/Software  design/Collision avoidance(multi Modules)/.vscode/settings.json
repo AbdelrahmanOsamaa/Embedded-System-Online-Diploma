@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "collision_avoidance.h": "c",
+        "ultrasonic.h": "c"
+    }
+}
